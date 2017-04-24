@@ -40,16 +40,16 @@ def valueChanged(key, value, isNew):
     global LOGGING
     if (LOGGING == True):
         L.addValue("NetworkTable", key, value)
-        if (key == "/debugMSG"):
+        if (key == "/ZLogger/debugMSG"):
             L.addValue("DebugMessage", "msg", value)
-    if (key == "/status" and (value == "True" or value == True)):
+    if (key == "/ZLogger/status" and (value == "True" or value == True)):
         if (LOGGING == False):
             message(resource_path("z.ico"), MAIN_NAME, "Robot Enabled")
             L.useFile(True)
             L.selectLog(MAIN_NAME)
             L.sendMsg("Logging to Files...")
             LOGGING = True
-    if (key == "/status" and (value == "False" or value == False) and LOGGING == True):
+    if (key == "/ZLogger/status" and (value == "False" or value == False) and LOGGING == True):
         message(resource_path("z.ico"), MAIN_NAME, "Robot Disabled")
         L.selectLog(MAIN_NAME)
         L.sendMsg("Saving Files and adding CSV Header... Please Wait")
@@ -85,7 +85,7 @@ for device in devices.gamepads:
     thread.start()
     id = id + 1
 
-L.sendMsg("ZLogger an FRC data logger by ImportPython (OnoUtilities)")
+L.sendMsg("ZLogger a FRC data logger by ImportPython (OnoUtilities)")
 L.sendMsg("Starting Connection Listener: " + ("- " + ip))
 NetworkTables.addConnectionListener(connectionListener, immediateNotify=True)
 L.sendMsg("Adding Global Listener")
