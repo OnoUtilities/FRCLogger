@@ -36,7 +36,3 @@ This was made for logging various anything that NetworkTables could  send. Also 
 
 # Credits
 Thanks to [this image and author](https://www.iconfinder.com/icons/199213/extension_file_format_log_icon#size=128) for a nice icon file.
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-
- 
