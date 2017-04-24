@@ -5,12 +5,12 @@ A FRC DriverStation Logger with the purpose to
   - Allow for debug messages to be sent and stored on DriverStation
 
 ## Requirements
- **WINDOWS**:
+ **WINDOWS**: <br/>
 If you want to use it just got to the [releases](http://github.com/OnoUtilities/ZLogger/releases/) page
-**LINUX/MAC**:
+**LINUX/MAC**: <br/>
 You can look at building requirements, but keep in mind ```pywin32``` is bein used.
 # Usage
- **WINDOWS**:
+ **WINDOWS**: <br/>
 Using ZLogger on Windows s as simple as supplying it with a IP Address and a time offset from UTC/GMT timezone. This example below is ````roborio-####-frc.local```` and Eastern Standnered Time (GMT-4).
 ```cmd
 ZLogger.exe roborio-####-frc.local -4
@@ -18,7 +18,7 @@ ZLogger.exe roborio-####-frc.local -4
 Keep in mind controller(s) need to be plugged in before running, or it won't be registered by ZLogger.
 Also ZLogger only rights to files when the robot is enabled. It rights to it as a CSV file.
 
- **ROBOT**:
+ **ROBOT**: <br/>
  The robot has to include some code as well. If your using Java you can use the simple 
  ZLogger.java class as shown below. If you are using LabView, RobotPy or C, here a brief overview.
  In NetworkTables do the following when:
