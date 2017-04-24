@@ -7,7 +7,7 @@ A FRC DriverStation Logger with the purpose to
 ## Requirements
  **WINDOWS**: <br/>
 If you want to use it just got to the [releases](http://github.com/OnoUtilities/ZLogger/releases/) page
-**LINUX/MAC**: <br/>
+<br/> **LINUX/MAC**: <br/>
 You can look at building requirements, but keep in mind ```pywin32``` is bein used.
 # Usage
  **WINDOWS**: <br/>
