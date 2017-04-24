@@ -7,14 +7,34 @@ A FRC DriverStation Logger with the purpose to
 ## Requirements
  **WINDOWS**:
 If you want to use it just got to the [releases](http://github.com/OnoUtilities/ZLogger/releases/) page
+**LINUX/MAC**:
+You can look at building requirements, but keep in mind ```pywin32``` is bein used.
 # Usage
-Use ZLogger is as simple as supplying it with a IP Address and a time offset from UTC/GMT timezone. This example below is localhost and Eastern Standnered Time GMT-04.
+ **WINDOWS**:
+Using ZLogger on Windows s as simple as supplying it with a IP Address and a time offset from UTC/GMT timezone. This example below is ````roborio-####-frc.local```` and Eastern Standnered Time (GMT-4).
 ```cmd
-ZLogger.exe localhost -4
+ZLogger.exe roborio-####-frc.local -4
 ```
-Keep in mind controller need to be plugged in before running, or it won't be registered by ZLogger.
+Keep in mind controller(s) need to be plugged in before running, or it won't be registered by ZLogger.
 Also ZLogger only rights to files when the robot is enabled. It rights to it as a CSV file.
 
+ **ROBOT**:
+ The robot has to include some code as well. If your using Java you can use the simple 
+ ZLogger.java class as shown below. If you are using LabView, RobotPy or C, here a brief overview.
+ In NetworkTables do the following when:
+ - **AUTON ENABLED** 
+            - Make ```/ZLogger/status``` to ```true```
+            - Make ```/ZLogger/type``` to ```auton```
+ - **TELEOP ENABLED** 
+            - Make ```/ZLogger/status``` to ```true```
+            - Make ```/ZLogger/type``` to ```teleop```
+ - **DISABLED** 
+            - Make ```/ZLogger/status``` to ```false```
+            - Make ```/ZLogger/type``` to ```none```
+ - **DEBUGS MESSAGE** Make ```/ZLogger/debugMSG``` to ```<message>``` (optional)
+
+##### ZLogger Library (Java):
+ ***WILL BE ADDED SOON***
 # Running/Building:
 - Requires Python2.7
 - These Library's:  ```inputs``` , ```pywin32``` 
