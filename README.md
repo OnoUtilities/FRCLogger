@@ -6,12 +6,12 @@ A FRC DriverStation Logger with the purpose to
 
 ## Requirements
  **WINDOWS**: <br/>
-If you want to use it just got to the [releases](http://github.com/OnoUtilities/ZLogger/releases/) page
+You can grab the executable from the [releases](http://github.com/OnoUtilities/ZLogger/releases/) page.
 <br/> **LINUX/MAC**: <br/>
-You can look at building requirements, but keep in mind ```pywin32``` is bein used.
+You can look at building requirements, but keep in mind ```pywin32``` is being used.
 # Usage
  **WINDOWS**: <br/>
-Using ZLogger on Windows s as simple as supplying it with a IP Address and a time offset from UTC/GMT timezone. This example below is ````roborio-####-frc.local```` and Eastern Standnered Time (GMT-4).
+Using ZLogger on Windows as simple as supplying it with a IP Address and a time offset from UTC/GMT timezone. This example below is ````roborio-####-frc.local```` and Eastern Standnered Time (GMT-4).
 ```cmd
 ZLogger.exe roborio-####-frc.local -4
 ```
