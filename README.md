@@ -10,7 +10,8 @@ If you want to use it just got to the [releases](http://github.com/OnoUtilities/
 # Usage
 Use ZLogger is as simple as supplying it with a IP Address and a time offset from UTC/GMT timezone. This example below is localhost and Eastern Standnered Time GMT-04.
 ```cmd
-ZLogger.exe localhost -4
+NORMAL USAGE: ZLogger.exe <ip> <utc_offset> <use_controller> <only_buttons> <debug>
+CONFIG USAGE: ZLogger.exe <use_config>
 ```
 Keep in mind controller need to be plugged in before running, or it won't be registered by ZLogger.
 Also ZLogger only rights to files when the robot is enabled. It rights to it as a CSV file.
