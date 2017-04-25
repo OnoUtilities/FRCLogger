@@ -64,3 +64,27 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
+
+def use_YES_NO(message):
+    loop = True
+    respone = False
+    while loop:
+        data = raw_input(message)
+        data = data.lower()
+        if (data == "n" or data == "no"):
+            loop = False
+            respone = False
+        elif (data == "y" or data == "yes"):
+            loop = False
+            respone = True
+
+    return respone
+
+
+def booli(s):
+    if s == 'True' or s == 'true':
+         return True
+    elif s == 'False' or s == 'false':
+         return False
+    else:
+         raise ValueError
