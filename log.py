@@ -126,7 +126,7 @@ class Logging:
                 dir_path = str(self.log_folder) + str("/") + str(self.__getSafeYMD()) + str("/") + str(key) + str("/")
                 if not os.path.exists(dir_path):
                     os.makedirs(dir_path)
-                file_path = str(dir_path) + str(self.__getSafeTime()) + str(".log")
+                file_path = str(dir_path) + str(self.__getSafeTime()) + str(".csv")
                 self.files_list[key] = open(file_path, "w")
                 self.file_log_path[key] = file_path
                 #self.files_list[key].write("HEADER\n\n")

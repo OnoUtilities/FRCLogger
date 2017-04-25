@@ -10,13 +10,14 @@ from utils import message, resource_path
 logging.basicConfig()
 
 
-if len(sys.argv) != 3:
-    print("Usage: " + sys.argv[0] + " <ip> <utc_offset>")
+if len(sys.argv) != 5:
+    print("Usage: " + sys.argv[0] + " <ip> <utc_offset> <only_buttons> <debug>")
     os._exit(1)
 
 ip = sys.argv[1]
 offset = sys.argv[2]
-
+only_btn = sys.argv[3]
+use_log = sys.argv[4]
 
 NetworkTables.initialize(server=ip)
 
@@ -58,7 +59,8 @@ def valueChanged(key, value, isNew):
 
 
     L.selectLog("NetworkTable")
-    L.sendMsg("valueChanged: key: '%s'; value: %s; isNew: %s" % (key, value, isNew))
+    if (use_log == "true"):
+        L.sendMsg("valueChanged: key: '%s'; value: %s; isNew: %s" % (key, value, isNew))
 
 
 def connectionListener(con, info):
@@ -69,30 +71,41 @@ def joystickListner(device, id):
         try:
             events = get_gamepad_id(id)
             for event in events:
-                if (event.state != "Sync" and event.code != "SYN_REPORT"):
-                    L.selectLog("Joystick-" + str(id))
+                if (event.state != "Sync" and event.code != "SYN_REPORT" and only_btn == "true"):
+                    if "ABS" in event.code and only_btn == "true":
+                        continue
                     message = str(event.code) + str("-") + str(event.state)
-                    L.sendMsg(message)
+                    if (use_log == "true"):
+                        L.selectLog("Joystick-" + str(id))
+                        L.sendMsg(message)
                     L.addValue(("JoyEvents-" + str(id)), str(event.code), str(event.state))
         except inputs.UnpluggedError as e:
             pass
+
+
+L.sendMsg("ZLogger a FRC data logger by ImportPython (OnoUtilities)")
+L.sendMsg("Starting Connection Listener: " + ("- " + ip))
+NetworkTables.addConnectionListener(connectionListener, immediateNotify=True)
+L.sendMsg("Adding NT Global Listener")
+NetworkTables.addGlobalListener(valueChanged)
 
 id = 0
 for device in devices.gamepads:
     L.createLog("Joystick-" + str(id))
     L.createFileLog("JoyEvents-" + str(id))
+    L.selectLog(MAIN_NAME)
+    L.sendMsg("Adding Joystick-" + str(id) + " Listener")
     thread = Thread(target=joystickListner, args=(device, id))
     thread.start()
     id = id + 1
 
-L.sendMsg("ZLogger a FRC data logger by ImportPython (OnoUtilities)")
-L.sendMsg("Starting Connection Listener: " + ("- " + ip))
-NetworkTables.addConnectionListener(connectionListener, immediateNotify=True)
-L.sendMsg("Adding Global Listener")
-NetworkTables.addGlobalListener(valueChanged)
+if (use_log == "false"):
+    L.sendMsg("Logging has been disabled in console!")
+if (only_btn == "true"):
+    L.sendMsg("Joystick are only logging button presses!")
 while True:
     try:
-        z = ""
+        z = "" #BAD IDEA
         time.sleep(0.5)
     except (KeyboardInterrupt, inputs.UnpluggedError) as e:
         L.selectLog(MAIN_NAME)
