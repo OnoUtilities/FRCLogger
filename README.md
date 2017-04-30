@@ -8,9 +8,11 @@ A FRC DriverStation Logger with the purpose to
  **WINDOWS**:
 
 If you want to use it just got to the [releases](http://github.com/OnoUtilities/ZLogger/releases/) page
+
 **ROBORIO**:
 
-If you use java, you can look [here](
+If you use Java, you can look [here](https://github.com/OnoUtilities/ZLogger/wiki/ZLogger-Java-Lib)
+If you don't use Java, you can look [here](https://github.com/OnoUtilities/ZLogger/wiki/NetworkTable-and-ZLogger)
 # Usage
 Use ZLogger is as simple as supplying it with a IP Address, a time offset from UTC/GMT timezone, if you want to use a controller, and if so log only buttons plus a debug stream (spam console or no?).
 ```cmd
