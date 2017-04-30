@@ -30,7 +30,7 @@ public class ZLogger {
 	}
 	/***
 	 * setTelopEnabled()
-	 * Enabled State of Robot and make State to 't' 
+	 * Enabled State of Robot and make State to 'teleop' 
 	 */
 	public void setTelopEnabled() {
 		setEnabled();
@@ -38,7 +38,7 @@ public class ZLogger {
 	}
 	/***
 	 * setTelopEnabled()
-	 * Disables the Robot  
+	 * Disables State of the Robot  
 	 */
 	public void setDisabled() {
 		table.putString(nt + "/state", "disabled");
