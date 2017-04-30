@@ -1,4 +1,4 @@
-package org.usfirst.frc2337.libraries;
+package org.usfirst.frc2337.libraries; //Change for your team
 
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 /***
