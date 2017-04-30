@@ -6,7 +6,11 @@ A FRC DriverStation Logger with the purpose to
 
 ## Requirements
  **WINDOWS**:
+
 If you want to use it just got to the [releases](http://github.com/OnoUtilities/ZLogger/releases/) page
+**ROBORIO**:
+
+If you use java, you can look [here](
 # Usage
 Use ZLogger is as simple as supplying it with a IP Address, a time offset from UTC/GMT timezone, if you want to use a controller, and if so log only buttons plus a debug stream (spam console or no?).
 ```cmd
@@ -19,17 +23,8 @@ Keep in mind controller need to be plugged in before running, or it won't be reg
 Also ZLogger only rights to files when the robot is enabled. It rights to it as a CSV file.
 
 # Building:
-- Requires Python2.7
-- These libs:  ```inputs``` , ```pywin32``` 
-- And if you want to build the exe you need: ```pyinstaller``` 
 
-### Pyintaller Building:
-This is the command argument used for building the exe (64 bit) via the spec file.
-```bash
-pyinstaller.exe zlogger.spec --onefline -F
-```
-### Linux/OSX
-This was made for Windows, becasuse the DriverStation (or legal FMS one) only runs on it. Now it 'should' work. It does use pywin32 for BallonTip messages (enabled robot, disabled robot) but other than that it 'should' work.
+If you want to build it you can take a look at the [build section](https://github.com/OnoUtilities/ZLogger/wiki/Building-ZLogger)
 
 # Upcoming Features:
 * Think of more fetures?
