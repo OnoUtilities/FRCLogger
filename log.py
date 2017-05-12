@@ -9,7 +9,7 @@ by Import-Python
 from datetime import datetime
 from datetime import tzinfo, timedelta
 import os, calendar, collections
-import time, fileinput, csv
+import time, fileinput
 
 class Logging:
     def __init__(self, utc_offset):
